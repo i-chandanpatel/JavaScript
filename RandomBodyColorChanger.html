@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+    <style>
+        div{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            margin: 10px;
+            height: 30px;
+            width: 50px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" id="b1"> Start</button>
+        <button type="button" id="b2"> Stop</button>
+    </div>
+</body>
+
+<script>
+    // Generating random color
+    let rColor = function () {
+        let code='0123456789ABCDEF';
+        let color='#';
+        for(let i=0; i<6; i++){
+            color+=code[Math.floor(Math.random()*16)];
+        }
+        return color;
+    };
+
+    let interValid;
+    //Start Changing Color
+    b1=document.getElementById('b1').addEventListener('click', () => {
+        if(!interValid){
+            interValid = setInterval(changeBgColor , 2000);
+        }
+        function changeBgColor() {
+            document.body.style.backgroundColor = rColor();
+        }
+    });
+
+    //Stop Changing Color
+    b2=document.getElementById('b2').addEventListener('click', () => {
+        clearInterval(interValid);
+        interValid=null;
+    });
+    
+</script>
+</html>
