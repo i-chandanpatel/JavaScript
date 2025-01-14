@@ -252,6 +252,8 @@ console.log("Random: ",Math.random()*10);
 
 
 //Dates
+//In JS Dates Months starts from 0
+//Formate: new Date(year, month, day, hours, minutes, seconds ,milliseconds)
 var d=new Date();
 console.log(d);
 console.log(d.toString());
