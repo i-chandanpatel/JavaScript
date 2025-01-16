@@ -287,6 +287,9 @@ let obj1={
     Profession:"Coding",
     Age:"20",
     "Location":"Delhi"
+    greet: function (){
+        return "Hello! from obj1"
+    }
 }
 
 console.log(obj1.Name);
@@ -294,6 +297,7 @@ console.log(obj1["Age"]);
 console.log(obj1["Location"]);
 console.log(typeof obj1.sym);
 console.log(obj1[sym]);
+console.log(obj1.greet())
 obj1.Age=21;
 // Object.freeze(obj1); //Doesn't let to change properties of object
 obj1.Profession="Gaming";
