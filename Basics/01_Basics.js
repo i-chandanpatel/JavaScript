@@ -290,6 +290,9 @@ let obj1={
     greet: function (){
         return "Hello! from obj1"
     }
+    //greetShortHand(){
+        //return "Hello! from obj1"
+    //}
 }
 
 console.log(obj1.Name);
