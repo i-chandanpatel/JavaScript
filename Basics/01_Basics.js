@@ -102,7 +102,7 @@ var sum=(a,b)=> console.log(`The sum is ${a+b}`);   //Only one liner code is pos
 
 
 
-//Strings
+//Strings:It is immutable
 var a="    This is a string th    ";
 console.log(`\n\n\nString interpolation: ${a}`);
 console.log(`\na.charAt(2) "${a.charAt(5)}" its charCode is "${a.charCodeAt(5)}"`);
@@ -175,7 +175,14 @@ console.log("\nCreated array using Array.of(a1,a2,a3): ",Array.of(a1,a2,a3));
 
 var fruits=["Apple","Banana","Grapes"]
 
-// console.log("\nfor-of loopused to iterate over iterables(array, string, maps, sets and nodelist):");
+//Destructuring array
+var [a,b,c]=fruits;
+console.log(a);
+
+var a=[1,[2,3,[4]],5]
+console.log(a.flat(Infinity))
+
+// console.log("\nfor-of loop used to iterate over iterables(array, string, maps, sets and nodelist):");
 // for (const item of fruits) {
 //     console.log(item);
 // }
@@ -279,6 +286,8 @@ console.log(myDate.toLocaleString());
 //Objects
 console.log("\n\n\n Objects");
 const sym=Symbol("AK");
+console.log(sym.prototype.description)
+
 // Object using Literal 
 let obj1={
     Name:"Denver",
@@ -352,3 +361,16 @@ var a={
 }
 var {instructor:i}=a;
 console.log("var {instructor:i}=a; now can acces using only i ",i);
+
+// this keyword
+//         In an object methode, this refers to the object
+//         Alone, this refers to the global object
+//         In a function, this refers to the global object
+//         In a function in strict mode, this is undefined
+//         In an event, this refers to the element that received the event
+//         Methodes like call(), apply(), and bind() can refer to any object
+
+//Padding
+var a="GitHub"
+console.log(a.padStart(15,"*"))
+console.log(a.padEnd(15,"*"))
