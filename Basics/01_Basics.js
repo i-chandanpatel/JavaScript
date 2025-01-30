@@ -153,6 +153,8 @@ splicee=arr1.splice(1,3,"Adds Element","After two entries");
 console.log("splice(Copies elements and removes from original array): ",splicee);
 console.log("Original array after Splice",arr1);
 
+console.log(arr1.toSpliced(1,1,"15"))    //Starts deleting from index 1 and delets 1 val and puts 15 at that position
+
 console.log("\nArray1: ",arr1,"\nArray2: ",arr2);
 arr1.push(arr2);
 console.log("\nArray1 after push",arr1)
@@ -304,6 +306,10 @@ let obj1={
     //}
 }
 
+console.log(obj1.hasOwnProperty("Name"))    //Only works for property that was created at the time of creation
+obj1.class=12;
+console.log(obj1.hasOwnProperty("class"))    //False
+console.log(Object.hasOwn(obj1,"Name"))
 console.log(obj1.Name);
 console.log(obj1["Age"]);
 console.log(obj1["Location"]);
