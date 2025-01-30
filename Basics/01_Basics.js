@@ -338,13 +338,18 @@ console.log(a);
 var b=new Object()
 b.FullName={
     FirstName:"Saurabh",
-    LastName:"Verma"
+    LastName:"Verma",
+    address:{
+        city:"NYC",
+        zip:1234
+    }
 }
 var c={a,b}     //c obj{a obj, b obj}
 console.log("Combined: ",c);
 var d=Object.assign({},a,b)     //a and b added in {} and then returned to d
 console.log("Combined using assign: ",d);
 
+console.log(d.address ? d.address.city : "City is not present")
 console.log("Keys: ",Object.keys(a));
 console.log("Values: ",Object.values(a));
 console.log("Entries: ",Object.entries(a));
@@ -362,6 +367,13 @@ var a={
 var {instructor:i}=a;
 console.log("var {instructor:i}=a; now can acces using only i ",i);
 
+var b={address:{
+        city:"NYC",
+        zip:1234
+}}
+console.log(b.address ? b.address.city : "City is not present")
+console.log(b.address?.city ?? "City is not present")    //Optional Chaining
+
 // this keyword
 //         In an object methode, this refers to the object
 //         Alone, this refers to the global object
@@ -374,3 +386,15 @@ console.log("var {instructor:i}=a; now can acces using only i ",i);
 var a="GitHub"
 console.log(a.padStart(15,"*"))
 console.log(a.padEnd(15,"*"))
+
+//Entries-Converts obj to array and fromEntries=converts array to obj
+var a={name:"Denver", age:25}
+var entries=Object.entries(a);
+console.log(entries)
+console.log(Object.fromEntries(entries))
+
+//Nullish Coalescing Operator= Returns RHS value if LHA have null or undefined value otherwise  retruns LHS
+ var a=0;
+console.log("a || 10 ",a || 10)
+console.log("a ?? 10 ",a ?? 10)
+
