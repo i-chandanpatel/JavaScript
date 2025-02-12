@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clock</h1>
+    <button type="button" id="start">Start</button>
+    <button type="button" id="stop">Stop</button>
+</body>
+<script>
+    let interval;
+    let getTime= ()=>{
+        
+
+        let startChanging=()=>{
+            var a= new Date()
+            document.querySelector('h1').innerHTML=`${a}`
+        }
+        interval=setInterval(startChanging, 1000)
+    }
+    
+    let stopTime=()=>{
+        clearInterval(interval);
+    }
+    document.getElementById('start').addEventListener('click', getTime)
+    document.getElementById('stop').addEventListener('click', stopTime)
+</script>
+</html>
